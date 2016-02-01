@@ -1,0 +1,15 @@
+{
+  "require": {
+    "google/apiclient": "^1.1",
+	"mandrill/mandrill": "1.0.*"
+  },
+  "autoload": {
+    "classmap": [
+      "classes",
+      "google"
+    ],
+    "files": [
+      "helper/utils.php"
+    ]
+  }
+}
