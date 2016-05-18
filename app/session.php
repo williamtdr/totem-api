@@ -21,9 +21,9 @@ if (isset( $_GET['code'] )) {
 }
 
 $key         = 'unauthenticated';
-$displayName = 'false';
+$displayName = false;
 if ($user) {
-    $displayName = $user->displayName();
+    $displayName = "\"" + $user->displayName() + "\"";
     $key         = $dbManager->genAuthKey($user);
 
     if ($user->remainingUsernameChanges === 3) {
@@ -34,5 +34,5 @@ if ($user) {
 
 // ...
 echo "authkey = '" . $key . "';\n";
-echo "display_name = '" . $displayName . "';\n";
+echo "display_name = " . $displayName . ";\n";
 echo "sessionComplete();\n";
